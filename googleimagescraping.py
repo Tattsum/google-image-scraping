@@ -13,13 +13,13 @@ os.environ["PATH"] += os.pathsep + os.getcwd()
 download_path = "img/"
 
 # 画像検索
-words_to_search = ['櫻井翔']
+words_to_search = ['二宮和也','櫻井翔']
 
 # 保存する画像の枚数を指定
-nb_to_download = [10]
+nb_to_download = [5,5]
 
 # 保存を何枚目から始めるか指定
-first_image_position = [0]
+first_image_position = [0,0]
 
 def scraping():
     if len(words_to_search) != len(nb_to_download) or len(nb_to_download) != len(first_image_position) :
