@@ -4,3 +4,4 @@ webencodings==0.5.1
 beautifulsoup4==4.6.3
 requests==2.20.1
 Flask==1.0.3
+argparse==1.4.0
