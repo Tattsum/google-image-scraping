@@ -10,7 +10,7 @@ import time
 os.environ["PATH"] += os.pathsep + os.getcwd()
 
 # ファイル名
-download_path = "動物画像/"
+download_path = "img/"
 # 画像検索
 words_to_search = ['ねこ','犬', 'うさぎ']
 nb_to_download = [3,6,9]
