@@ -6,10 +6,11 @@ import googleimagescraping
 import argparse
 import os
 
+TOKEN = os.environ["TOKEN"] #環境変数"TOKEN"を取得
 
-def line(message, images):
+def line(message, images,TOKEN):
     url = "https://notify-api.line.me/api/notify"
-    token = "vsX9w5PycFVrnzvgJzbvYyHYrFcMYd9yUTPEIpCZy6H"
+    token = TOKEN
     headers = {"Authorization": "Bearer " + token}
     payload = {"message":  message}
 
@@ -24,13 +25,18 @@ def line(message, images):
 def main():
     googleimagescraping.scraping()
     message = '嵐 最高!!'
-    path = "./img/櫻井翔"
-    base_path = os.path.abspath("./img/櫻井翔")
-    for filename in os.listdir(base_path):
-        if os.path.isfile(os.path.join(base_path, filename)):
-            files = path + "/" + filename
-            file_full_path = os.path.abspath(files)
-            line(message,file_full_path)
+    arashi = ''
+    path = googleimagescraping.download_path
+    base_path = os.path.abspath(path)
+    for dirname in os.listdir(base_path):
+        if os.path.isdir(os.path.join(base_path, dirname)):
+            dir = base_path + "/" +dirname
+            for filename in os.listdir(dir):
+                if os.path.isfile(os.path.join(dir,filename)):
+                    files =  base_path + "/" + dirname + "/" +filename
+                    file_full_path = os.path.abspath(files)
+                    line(message,file_full_path, TOKEN)
+
 
 if __name__ == '__main__':
     main()
