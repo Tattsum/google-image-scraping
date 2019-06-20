@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import os
 import json
-import urllib.request  
+import urllib.request
 import sys
 import time
 
@@ -11,10 +11,15 @@ os.environ["PATH"] += os.pathsep + os.getcwd()
 
 # ファイル名
 download_path = "img/"
+
 # 画像検索
-words_to_search = ['ねこ','犬', 'うさぎ']
-nb_to_download = [3,6,9]
-first_image_position = [0,3,6]
+words_to_search = ['櫻井翔']
+
+# 保存する画像の枚数を指定
+nb_to_download = [100]
+
+# 保存を何枚目から始めるか指定
+first_image_position = [0]
 
 def main():
     if len(words_to_search) != len(nb_to_download) or len(nb_to_download) != len(first_image_position) :

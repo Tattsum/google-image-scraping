@@ -1,3 +1,4 @@
 # 以下のファイルをpushされないようにした.
 
 img/*
+geckodriver.log
