@@ -16,7 +16,7 @@ download_path = "img/"
 words_to_search = ['二宮和也', '櫻井翔', '大野智', '松本潤', '相葉雅紀']
 
 # 保存する画像の枚数を指定
-nb_to_download = [100, 100, 100, 100, 100]
+nb_to_download = [10, 10, 10, 10, 10]
 
 # 保存を何枚目から始めるか指定
 first_image_position = [0, 0, 0, 0, 0]
@@ -48,7 +48,7 @@ def search_and_save(text, number, first_position):
     driver.get(url)
     headers = {}
     headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-    extensions = {"jpg", "jpeg", "png", "gif"}
+    extensions = {"jpg"}
 
     img_count = 0
     downloaded_img_count = 0
