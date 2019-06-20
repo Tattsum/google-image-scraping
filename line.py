@@ -23,7 +23,7 @@ def line(message, images):
         requests.post(url, data=payload, headers=headers, files=files)
 
 def main():
-    # googleimagescraping.scraping()
+    googleimagescraping.scraping()
     message = '嵐 最高!!'
     path = googleimagescraping.download_path
     base_path = os.path.abspath(path)
