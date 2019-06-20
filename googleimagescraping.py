@@ -16,12 +16,12 @@ download_path = "img/"
 words_to_search = ['櫻井翔']
 
 # 保存する画像の枚数を指定
-nb_to_download = [100]
+nb_to_download = [10]
 
 # 保存を何枚目から始めるか指定
 first_image_position = [0]
 
-def main():
+def scraping():
     if len(words_to_search) != len(nb_to_download) or len(nb_to_download) != len(first_image_position) :
         raise ValueError('You may have forgotten to configure one of the lists (length is different)')
     i= 0
@@ -103,4 +103,4 @@ def search_and_save(text, number, first_position):
     driver.quit()
 
 if __name__ == "__main__":
-    main()
+    scraping()
